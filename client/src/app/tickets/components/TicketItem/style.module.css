@@ -1,0 +1,7 @@
+.ticket-item {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+}

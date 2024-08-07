@@ -1,0 +1,11 @@
+.tickets-detail {     
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+
+    gap: 1rem;
+    margin: 0 auto;
+    select {
+         width: 100%;
+    }
+}

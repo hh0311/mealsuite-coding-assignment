@@ -1,0 +1,20 @@
+.list { 
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+
+    list-style: none;
+    gap: 12px;
+    max-height: 70vh;
+    overflow-y: scroll;
+
+
+
+    & li:nth-child(2n + 1){
+        background-color: #BED7DC;
+        border-radius: 12px;
+    }
+}

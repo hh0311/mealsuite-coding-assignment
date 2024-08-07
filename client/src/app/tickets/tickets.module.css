@@ -1,2 +1,17 @@
 .tickets {
 }
+
+
+
+.tickets-controller { 
+    display: flex;
+    justify-content: center;
+    gap: 12rem;
+    margin-bottom: 1rem;
+}
+
+.tickets-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

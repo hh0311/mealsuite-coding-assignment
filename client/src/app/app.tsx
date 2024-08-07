@@ -1,38 +1,41 @@
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useReducer, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Ticket, User } from '@acme/shared-models';
 
 import styles from './app.module.css';
 import Tickets from './tickets/tickets';
+import TicketDetails from './tickets/detail';
+import useGetList from './hooks/useGetList';
+import { API_ENDPOINTS } from './api/endpoints';
 
 const App = () => {
-  const [tickets, setTickets] = useState([] as Ticket[]);
-  const [users, setUsers] = useState([] as User[]);
+  // const [tickets, setTickets] = useState([] as Ticket[]);
+  // const [users, setUsers] = useState([] as User[]);
 
   // Very basic way to synchronize state with server.
   // Feel free to use any state/fetch library you want (e.g. react-query, xstate, redux, etc.).
-  useEffect(() => {
-    async function fetchTickets() {
-      const data = await fetch('/api/tickets').then();
-      setTickets(await data.json());
-    }
+  // useEffect(() => {
+  //   async function fetchTickets() {
+  //     const data = await fetch('/api/tickets').then();
+  //     setTickets(await data.json());
+  //   }
 
-    async function fetchUsers() {
-      const data = await fetch('/api/users').then();
-      setUsers(await data.json());
-    }
+  //   async function fetchUsers() {
+  //     const data = await fetch('/api/users').then();
+  //     setUsers(await data.json());
+  //   }
 
-    fetchTickets();
-    fetchUsers();
-  }, []);
+  //   fetchTickets();
+  //   fetchUsers();
+  // }, []);
 
   return (
     <div className={styles['app']}>
       <h1>Ticketing App</h1>
       <Routes>
-        <Route path="/" element={<Tickets tickets={tickets} />} />
+        <Route path="/" element={<Tickets />} />
         {/* Hint: Try `npx nx g component TicketDetails --project=client --no-export` to generate this component  */}
-        <Route path="/:id" element={<h2>Details Not Implemented</h2>} />
+        <Route path="/:id" element={<TicketDetails />} />
       </Routes>
     </div>
   );

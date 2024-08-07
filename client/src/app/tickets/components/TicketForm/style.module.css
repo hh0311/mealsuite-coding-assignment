@@ -1,0 +1,6 @@
+.ticket-form { 
+    display: flex;
+    gap: .75rem;
+    flex-direction: column;
+    align-items: baseline;
+}
